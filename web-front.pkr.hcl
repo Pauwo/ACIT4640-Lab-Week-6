@@ -55,13 +55,15 @@ build {
 
   provisioner "file" {
     # COMPLETE ME add the nginx.conf file to your image
-    use_sudo    = true
     source      = "files/nginx.conf"
-    destination = "/etc/nginx/nginx.conf"
+    destination = "/tmp/nginx.conf"
   }
 
   # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
   provisioner "shell" {
+    inline = [
+      "sudo mv /tmp/nginx.conf /etc/nginx/nginx.conf"
+    ]
     script = "scripts/install-nginx"
   }
 }
