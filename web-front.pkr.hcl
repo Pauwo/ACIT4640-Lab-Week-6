@@ -58,15 +58,15 @@ build {
     destination = "/tmp/nginx.conf"
   }
 
+  # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
+  provisioner "shell" {
+    script = "scripts/install-nginx"
+  }
+
   provisioner "shell" {
     inline = [
       "sudo mv /tmp/nginx.conf /etc/nginx/nginx.conf"
     ]
-  }
-
-  # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
-  provisioner "shell" {
-    script = "scripts/install-nginx"
   }
 }
 
