@@ -1,5 +1,4 @@
-# 4640-w6-lab-start-w25
+# Lab 6 Images
 
-Starter files for the week 6 lab, intro to Packer.
-
-See lab instructions on D2L for details.
+## This image shows the HTML document served by a running instance of my AMI:
+![Web Page Screenshot](Lab6Website.png)
