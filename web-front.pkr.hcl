@@ -41,15 +41,15 @@ build {
     inline = [
       "echo creating directories",
       # COMPLETE ME add inline scripts to create necessary directories and change directory ownership.
-      "sudo mkdir -p /var/www/html",
-      "sudo chown -R ubuntu:ubuntu /var/www"
+      "sudo mkdir -p /web/html",
+      "sudo chown -R ubuntu:ubuntu /web"
     ]
   }
 
   provisioner "file" {
     # COMPLETE ME add the HTML file to your image
     source      = "files/index.html"
-    destination = "/var/www/html/index.html"
+    destination = "/web/html/index.html"
   }
 
   provisioner "file" {
