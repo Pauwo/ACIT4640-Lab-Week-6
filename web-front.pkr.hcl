@@ -17,7 +17,7 @@ source "amazon-ebs" "ubuntu" {
   source_ami_filter {
     filters = {
 		  # COMPLETE ME complete the "name" argument below to use Ubuntu 24.04
-      name = ""
+      name = "ubuntu-24.04-amd64-server-*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
@@ -33,7 +33,7 @@ build {
   name = "web-nginx"
   sources = [
     # COMPLETE ME Use the source defined above
-    ""
+    source.amazon-ebs.ubuntu
   ]
   
   # https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build/provisioner
@@ -41,17 +41,26 @@ build {
     inline = [
       "echo creating directories",
       # COMPLETE ME add inline scripts to create necessary directories and change directory ownership.
+      "mkdir -p /var/www/html",
+      "chown -R ubuntu:ubuntu /var/www"
     ]
   }
 
   provisioner "file" {
     # COMPLETE ME add the HTML file to your image
+    source      = "files/index.html"
+    destination = "/var/www/html/index.html"
   }
 
   provisioner "file" {
     # COMPLETE ME add the nginx.conf file to your image
+    source      = "files/nginx.conf"
+    destination = "/etc/nginx/nginx.conf"
   }
 
   # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
+  provisioner "shell" {
+    script = "scripts/install-nginx.sh"
+  }
 }
 
