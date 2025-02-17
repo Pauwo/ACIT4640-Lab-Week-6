@@ -17,7 +17,7 @@ source "amazon-ebs" "ubuntu" {
   source_ami_filter {
     filters = {
 		  # COMPLETE ME complete the "name" argument below to use Ubuntu 24.04
-      name = "ubuntu-24.04-amd64-server-*"
+      name = "ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
