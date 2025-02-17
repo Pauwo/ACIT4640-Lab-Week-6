@@ -60,7 +60,7 @@ build {
 
   # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
   provisioner "shell" {
-    script = "scripts/install-nginx.sh"
+    script = "scripts/install-nginx"
   }
 }
 
