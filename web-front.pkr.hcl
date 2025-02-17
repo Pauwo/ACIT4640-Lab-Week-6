@@ -63,7 +63,6 @@ build {
   # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
   provisioner "shell" {
     script = "scripts/install-nginx"
-    use_sudo    = true
   }
 }
 
