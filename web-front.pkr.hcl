@@ -41,8 +41,8 @@ build {
     inline = [
       "echo creating directories",
       # COMPLETE ME add inline scripts to create necessary directories and change directory ownership.
-      "mkdir -p /var/www/html",
-      "chown -R ubuntu:ubuntu /var/www"
+      "sudo mkdir -p /var/www/html",
+      "sudo chown -R ubuntu:ubuntu /var/www"
     ]
   }
 
