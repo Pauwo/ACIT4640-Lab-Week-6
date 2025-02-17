@@ -48,16 +48,16 @@ build {
 
   provisioner "file" {
     # COMPLETE ME add the HTML file to your image
+    use_sudo    = true
     source      = "files/index.html"
     destination = "/var/www/html/index.html"
-    use_sudo    = true
   }
 
   provisioner "file" {
     # COMPLETE ME add the nginx.conf file to your image
+    use_sudo    = true
     source      = "files/nginx.conf"
     destination = "/etc/nginx/nginx.conf"
-    use_sudo    = true
   }
 
   # COMPLETE ME add additional provisioners to run shell scripts and complete any other tasks
